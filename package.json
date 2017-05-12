@@ -2,6 +2,7 @@
   "name": "good-morning-asshole",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://peelo.net/good-morning-asshole",
   "dependencies": {
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
