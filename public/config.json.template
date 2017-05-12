@@ -1,0 +1,10 @@
+{
+  "foli": {
+    "stops": ["T4"],
+    "arrivalDisplayLimit": 6
+  },
+  "reddit": {
+    "subreddit": "worldnews",
+    "postDisplayLimit": 6
+  }
+}
