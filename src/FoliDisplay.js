@@ -4,7 +4,7 @@ import _ from "lodash";
 import { updateState } from "./utils";
 
 function fetchArrivalData(stopId) {
-  return fetch(`http://data.foli.fi/siri/sm/${stopId}/`)
+  return fetch(`https://data.foli.fi/siri/sm/${stopId}/`)
     .then(response => response.json())
     .then(data => {
       if (data.status !== "OK") {
