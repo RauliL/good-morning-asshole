@@ -37,23 +37,19 @@ class RedditDisplay extends Component {
             /r/{this.props.subreddit}
           </h4>
         </div>
-        <table className="table">
-          <tbody>
-            {
-              this.state.isLoading
-                ? <tr>
-                    <td className="text-center">
-                      <i className="fa fa-spinner fa-spin fa-2x"/>
-                    </td>
-                  </tr>
+        <ul className="list-group list-group-flush">
+          {
+            this.state.isLoading
+                ? <ul className="list-group-item">
+                    <i className="fa fa-spinner fa-spin fa-2x"/>
+                  </ul>
                 : this.state.posts.map(post =>
-                    <tr key={post.id}>
-                      <td>{post.title}</td>
-                    </tr>
-                  )
-            }
-          </tbody>
-        </table>
+                  <li key={post.id} className="list-group-item">
+                    {post.title}
+                  </li>
+            )
+          }
+        </ul>
       </div>
     );
   }
