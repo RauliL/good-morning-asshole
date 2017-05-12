@@ -40,9 +40,9 @@ class RedditDisplay extends Component {
         <ul className="list-group list-group-flush">
           {
             this.state.isLoading
-              ? <ul className="list-group-item">
+              ? <li className="list-group-item text-center">
                   <i className="fa fa-spinner fa-spin fa-2x"/>
-                </ul>
+                </li>
               : this.state.posts.map(post =>
                 <li key={post.id} className="list-group-item">
                   {post.title}
