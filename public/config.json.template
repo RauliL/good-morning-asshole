@@ -1,10 +1,21 @@
 {
-  "foli": {
-    "stops": ["T4"],
-    "arrivalDisplayLimit": 6
-  },
-  "reddit": {
-    "subreddit": "worldnews",
-    "postDisplayLimit": 6
-  }
+  "components": [
+    {
+      "type": "clock"
+    },
+    {
+      "type": "föli",
+      "props": {
+        "stops": ["T4"],
+        "arrivalDisplayLimit": 6
+      }
+    },
+    {
+      "type": "subreddit",
+      "props": {
+        "subreddit": "worldnews",
+        "postDisplayLimit": 6
+      }
+    }
+  ]
 }

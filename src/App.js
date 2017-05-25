@@ -1,7 +1,14 @@
 import React, { Component } from "react";
+import _ from "lodash";
 import ClockDisplay from "./ClockDisplay";
 import FoliDisplay from "./FoliDisplay";
 import RedditDisplay from "./RedditDisplay";
+
+const COMPONENT_MAPPING = {
+  clock: ClockDisplay,
+  f\u00f6li: FoliDisplay,
+  reddit: RedditDisplay,
+};
 
 class App extends Component {
   constructor(props) {
@@ -16,13 +23,16 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="container">
-        <ClockDisplay/>
-        {this.state.config.foli && <FoliDisplay {...this.state.config.foli}/>}
-        {this.state.config.reddit && <RedditDisplay {...this.state.config.reddit}/>}
-      </div>
-    );
+    const components = [];
+
+    if (_.isArray(this.state.config.components)) {
+      this.state.config.components.forEach((config, index) => {
+        config.key = index;
+        components.push(React.createElement(COMPONENT_MAPPING[config.type], config.props));
+      });
+    }
+
+    return <div className="container">{components}</div>;
   }
 }
 
