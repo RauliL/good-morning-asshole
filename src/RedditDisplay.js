@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import _ from "lodash";
 
-class RedditDisplay extends Component {
+export default class RedditDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -55,4 +56,7 @@ class RedditDisplay extends Component {
   }
 }
 
-export default RedditDisplay;
+RedditDisplay.propTypes = {
+  postDisplayLimit: PropTypes.number,
+  subreddit: PropTypes.string.isRequired,
+};

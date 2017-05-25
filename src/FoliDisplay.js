@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import moment from "moment";
 import _ from "lodash";
 import { updateState } from "./utils";
@@ -21,7 +22,7 @@ function fetchArrivalData(stopId) {
     })
 }
 
-class FoliDisplay extends Component {
+export default class FoliDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -102,4 +103,7 @@ class FoliDisplay extends Component {
   }
 }
 
-export default FoliDisplay;
+FoliDisplay.propTypes = {
+  arrivalDisplayLimit: PropTypes.number,
+  stops: PropTypes.arrayOf(React.PropTypes.string).isRequired,
+};
