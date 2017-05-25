@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import moment from "moment";
 import { updateState } from "./utils";
 
-class ClockDisplay extends Component {
+export default class ClockDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,8 +26,10 @@ class ClockDisplay extends Component {
   }
 
   render() {
-    return <h1 className="text-center">{this.state.currentTime.format("HH:mm:ss")}</h1>;
+    return <h1 className="text-center">{this.state.currentTime.format(this.props.format || "HH:mm:ss")}</h1>;
   }
 }
 
-export default ClockDisplay;
+ClockDisplay.propTypes = {
+  format: PropTypes.string,
+};
